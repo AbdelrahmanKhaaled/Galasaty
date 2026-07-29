@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { AuthProvider } from "./contexts/AuthContext"
 import { LanguageProvider } from "./contexts/LanguageContext"
 import { ProtectedRoute } from "./components/ProtectedRoute"
+import { GuestRoute } from "./components/GuestRoute"
 import { DashboardLayout } from "./components/DashboardLayout"
 import { Login } from "./pages/Login"
 import { ForgotPassword } from "./pages/ForgotPassword"
 import { ResetPassword } from "./pages/ResetPassword"
 import { VerifyCode } from "./pages/VerifyCode"
+import { useAuth } from "./contexts/AuthContext"
 import { Profile } from "./pages/Profile"
 import { Dashboard } from "./pages/Dashboard"
 import { Patients } from "./pages/Patients"
@@ -26,16 +28,54 @@ import { SingleBanner } from "./pages/SingleBanner"
 import { SingleTransaction } from "./pages/SingleTransaction"
 import "./App.css"
 
+function RootRedirect() {
+  const { isAuthenticated, isLoading } = useAuth()
+
+  if (isLoading) {
+    return null
+  }
+
+  return <Navigate to={isAuthenticated ? "/dashboard" : "/login"} replace />
+}
+
 function App() {
   return (
     <LanguageProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/verify-code" element={<VerifyCode />} />
+          <Route
+            path="/login"
+            element={
+              <GuestRoute>
+                <Login />
+              </GuestRoute>
+            }
+          />
+          <Route
+            path="/forgot-password"
+            element={
+              <GuestRoute>
+                <ForgotPassword />
+              </GuestRoute>
+            }
+          />
+          <Route
+            path="/reset-password"
+            element={
+              <GuestRoute>
+                <ResetPassword />
+              </GuestRoute>
+            }
+          />
+          <Route
+            path="/verify-code"
+            element={
+              <GuestRoute>
+                <VerifyCode />
+              </GuestRoute>
+            }
+          />
           <Route
             path="/dashboard/profile"
             element={
@@ -207,10 +247,7 @@ function App() {
             }
           />
           
-          <Route
-            path="/"
-            element={<Navigate to="/login" replace />}
-          />
+          <Route path="/" element={<RootRedirect />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
