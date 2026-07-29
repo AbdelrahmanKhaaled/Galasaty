@@ -277,7 +277,7 @@ export function Services() {
           {service.image && (
             <img 
               src={service.image.startsWith('http') ? service.image : `https://galasaty.teamqeematech.site/storage/${service.image}`} 
-              alt={service.name?.en || service.name?.ar || "Service"} 
+              alt={typeof service.name === 'object' ? (service.name?.en || service.name?.ar || "Service") : (service.name || "Service")} 
               className="h-10 w-10 rounded object-cover"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'https://via.placeholder.com/40'

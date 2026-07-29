@@ -40,7 +40,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const { user, logout } = useAuth()
+  const { logout } = useAuth()
 
   const menuItems = menuItemsPaths.map(item => ({
     ...item,

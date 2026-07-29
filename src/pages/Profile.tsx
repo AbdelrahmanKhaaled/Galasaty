@@ -25,11 +25,6 @@ export function Profile() {
   const [loading, setLoading] = useState(false)
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
   const [deleting, setDeleting] = useState(false)
-  const [tokens, setTokens] = useState({
-    player_id: "",
-    fcm_token: "",
-  })
-  const [updatingTokens, setUpdatingTokens] = useState(false)
 
   useEffect(() => {
     if (user) {
@@ -90,10 +85,8 @@ export function Profile() {
       await authAPI.update(data)
       setSuccess(t("profile.updateSuccess"))
       
-      // Refresh user data
-      const response = await authAPI.getProfile()
-      // You might want to update the auth context here
-      
+      await authAPI.getProfile()
+
       // Reset password fields
       setFormData({ ...formData, password: "", re_password: "" })
     } catch (err: any) {
@@ -116,24 +109,6 @@ export function Profile() {
       console.error("Delete account error:", err)
       setError(err.response?.data?.message || err.message || t("profile.deleteError"))
       setDeleting(false)
-    }
-  }
-
-  const handleUpdateTokens = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
-    setSuccess("")
-    setUpdatingTokens(true)
-
-    try {
-      await authAPI.updateTokens(tokens.player_id, tokens.fcm_token)
-      setSuccess(t("profile.updateTokensSuccess"))
-      setTokens({ player_id: "", fcm_token: "" })
-    } catch (err: any) {
-      console.error("Update tokens error:", err)
-      setError(err.response?.data?.message || err.message || t("profile.updateTokensError"))
-    } finally {
-      setUpdatingTokens(false)
     }
   }
 

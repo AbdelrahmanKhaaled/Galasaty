@@ -248,7 +248,7 @@ export function Specials() {
           {special.image && (
             <img 
               src={special.image.startsWith('http') ? special.image : `https://galasaty.teamqeematech.site/storage/${special.image}`} 
-              alt={special.name?.en || special.name?.ar || "Special"} 
+              alt={typeof special.name === 'object' ? (special.name?.en || special.name?.ar || "Special") : (special.name || "Special")} 
               className="h-10 w-10 rounded object-cover"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'https://via.placeholder.com/40'

@@ -248,7 +248,7 @@ export function Cities() {
           {city.image && (
             <img 
               src={city.image.startsWith('http') ? city.image : `https://galasaty.teamqeematech.site/storage/${city.image}`} 
-              alt={city.name?.en || city.name?.ar || "City"} 
+              alt={typeof city.name === 'object' ? (city.name?.en || city.name?.ar || "City") : (city.name || "City")} 
               className="h-10 w-10 rounded object-cover"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'https://via.placeholder.com/40'

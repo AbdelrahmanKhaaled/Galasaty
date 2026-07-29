@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function LanguageToggle() {
-  const { language, changeLanguage, isRTL } = useLanguage();
+  const { language, changeLanguage } = useLanguage();
 
   return (
     <DropdownMenu>
