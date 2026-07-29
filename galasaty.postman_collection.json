@@ -1,0 +1,3773 @@
+{
+	"info": {
+		"_postman_id": "c2d8e7c7-6fca-4c7c-9b7f-3e58269ca283",
+		"name": "galasaty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37944355"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "center@galasaty.com",
+									"description": "req.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/WhatsApp Image 2025-12-08 at 12.30.44 PM.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "94499449",
+									"type": "text"
+								},
+								{
+									"key": "re_password",
+									"value": "94499449",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "center",
+									"description": "nullable| in:doctor,center",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "01159175040",
+									"description": "required | egyptian numbers",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "2",
+									"description": "required with :type",
+									"type": "text"
+								},
+								{
+									"key": "name_ar",
+									"value": "اسم المركز او العيادة بالعربية",
+									"description": "required with :type",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "center or clininc name in en",
+									"description": "required with :type",
+									"type": "text"
+								},
+								{
+									"key": "address_ar",
+									"value": "العنوان بالعربي",
+									"description": "required with :type",
+									"type": "text"
+								},
+								{
+									"key": "address_en",
+									"value": "english address",
+									"description": "required with :type",
+									"type": "text"
+								},
+								{
+									"key": "license_image",
+									"description": "required with :type",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/WhatsApp Image 2025-12-08 at 12.30.44 PM.jpeg"
+								},
+								{
+									"key": "exp_image",
+									"description": "required with :type",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/WhatsApp Image 2025-12-08 at 12.30.44 PM.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send verification code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/send-verification-code",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"send-verification-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "60530",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/verify-code?=14141",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verify-code"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "14141"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|SI4u5VU8nrhiCOyIahy56bkafGj04bD50MR5cCHd801cd16d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@galasaty.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "9449",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tokens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|vfzoNYXAHHDTxfZb7GgIIdTQ23g83le1vIDZ8V3cb6bc52ee",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "player_id",
+									"value": "1223",
+									"type": "text"
+								},
+								{
+									"key": "fcm_token",
+									"value": "1233",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-tokens?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-tokens"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|vfzoNYXAHHDTxfZb7GgIIdTQ23g83le1vIDZ8V3cb6bc52ee",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|vfzoNYXAHHDTxfZb7GgIIdTQ23g83le1vIDZ8V3cb6bc52ee",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rider@heavy-rides.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "otp",
+									"value": "46776",
+									"type": "text"
+								},
+								{
+									"key": "remember_token",
+									"value": "2eVWETXaynUvDBEejbPLgbF6KggdlYcklOc2o11ztEE1xEBRkboETSiKXdUq",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "re_password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/reset-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|6LXlA4hPqNtvyi1NBac48ZrEiHzfLFmTOs4NEudc0812b300",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "name",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "94499449",
+									"type": "text"
+								},
+								{
+									"key": "re_password",
+									"value": "94499449",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|YJUO0eQjrXKMbzLY7ZEhIhbtPPUfENz9JNXSWhdu0f20e889",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-account",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions (mobile)",
+			"item": [
+				{
+					"name": "my transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/my-transactions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"my-transactions"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": null,
+									"description": "nullable in:deposit,withdraw",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"description": "nullable in:'pending','completed','failed' default completed",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my withdraw requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/my-withdraw-requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"my-withdraw-requests"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "completed",
+									"description": "nullable in:pending , completed",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add A Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/add-withdraw-request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-withdraw-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "charge -my -wallet (for testing only will be redirect to payments)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "3000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/charge-my-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"charge-my-wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories , services , specials, banners (mobile)",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/doctor/categories?search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"description": "nullable"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Specials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/doctor/specials?search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"specials"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"description": "nullable"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/doctor/categories/:category_id/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"categories",
+								":category_id",
+								"services"
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All banners",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/banners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banners"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "center or clinic (mobile)",
+			"item": [
+				{
+					"name": "my specials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/doctor/my-specials",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"my-specials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update or add specials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "special_ids[]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "special_ids[]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/doctor/update-specials?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"update-specials"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/doctor/my-services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"my-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add or update services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "services[0][service_id]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "services[0][price]",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "services[0][type]",
+									"value": "indoor",
+									"description": "required in:indoor,outdoor",
+									"type": "text"
+								},
+								{
+									"key": "services[1][service_id]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "services[1][price]",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "services[1][type]",
+									"value": "outdoor",
+									"description": "required in:indoor,outdoor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/doctor/update-services?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"update-services"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|d7ixejxG42Efpb7LrCLSUFNW03M4iH561IXZoq7me9bf5025",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "default : en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "indoor",
+									"description": "required | in:indoor,outdoor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/doctor/services/:service_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"doctor",
+								"services",
+								":service_id"
+							],
+							"variable": [
+								{
+									"key": "service_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "settings (front end)",
+			"item": [
+				{
+					"name": "settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/get-settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get-settings"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": null,
+									"description": "nullable in:deposit,withdraw",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"description": "nullable in:'pending','completed','failed' default completed",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "minimum_fare_to_book",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "profit_type",
+									"value": "percentage",
+									"description": "in : percentage , fixed",
+									"type": "text"
+								},
+								{
+									"key": "profit_value",
+									"value": "20",
+									"description": "if percentage : less than 100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-settings?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-settings"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients (front end)",
+			"item": [
+				{
+					"name": "All patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-patients?search=eee&status=inactive",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-patients"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "eee"
+								},
+								{
+									"key": "status",
+									"value": "inactive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient toggle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|aH2k4ryAhw0XMz3e5HrAgAy5dH2stKAOTCRQAhyS950d426a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/toggle-patient/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"toggle-patient",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update rider",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|aH2k4ryAhw0XMz3e5HrAgAy5dH2stKAOTCRQAhyS950d426a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "m8awry",
+									"description": "sometimes req. max:255",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "gfas@djk.sfdg",
+									"description": "sometimes email unique",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "01551515155",
+									"description": "egyptian regex sometimes",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "image 5120mb max sometimes",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-27 205450.png",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "inactive",
+									"description": "sometimes in :active,inactive",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-patient/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-patient",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a rider",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|aH2k4ryAhw0XMz3e5HrAgAy5dH2stKAOTCRQAhyS950d426a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-rider/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-rider",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admins (front end)",
+			"item": [
+				{
+					"name": "All Admins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-admins",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-admins"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "er@heavy-rides.",
+									"description": "nullable",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "inactive",
+									"description": "nullable in:'active,inactive",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Permissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-permissions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed ashraf",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fhwg@dkugf.sdfgs",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01522334459",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "permissions[]",
+									"value": "banners",
+									"type": "text"
+								},
+								{
+									"key": "permissions[]",
+									"value": "bookings",
+									"type": "text"
+								},
+								{
+									"key": "permissions[]",
+									"value": "doctors",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-11-09 203405.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-admin",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin toggle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/toggle-admin/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"toggle-admin",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/update-admin/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-admin",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete an admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-admin/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-admin",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories (front end)",
+			"item": [
+				{
+					"name": "All categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-categories?search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-categories"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "علاج اعصاب",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "nuero",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-category",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/single-category/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"single-category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "علاج اعصاب - نفسي",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "nuero - cyco",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png",
+									"disabled": true
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-category/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-category",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-category/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services (front end)",
+			"item": [
+				{
+					"name": "All services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "جلسه علاج adfge",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "jadfhf dfva",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/WhatsApp Image 2025-12-08 at 12.30.44 PM.jpeg"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-service",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/single-service/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"single-service",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "علاج اعصاب - نفسي",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "nuero - cyco",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png",
+									"disabled": true
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-07 174704.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-category/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-category",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-service/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-service",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specials (front end)",
+			"item": [
+				{
+					"name": "All Specials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-specials",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-specials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create special",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "جلسه علاج",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "jadfhf",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-10-20 183307.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-special",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-special"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single special",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/single-special/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"single-special",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update special",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "علاج اعصاب - نفسي",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "nuero - cyco",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-11-10 181518.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-special/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-special",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-special/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-special",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities (front end)",
+			"item": [
+				{
+					"name": "All Cities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "القاهرة",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "cairo",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "سيابل سينلا سيرل ",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-city",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/single-city/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"single-city",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name_ar",
+									"value": "hgrhivm hg[]d]m",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "nuero - cyco",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "srgh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Screenshots/Screenshot 2025-11-10 181518.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-city/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-city",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-city/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-city",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "banners (front end)",
+			"item": [
+				{
+					"name": "All banners",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/all-banners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"all-banners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title_ar",
+									"value": "سنليسر",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "sddghj",
+									"description": "req",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "سيابل سينلا سيرل ",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "req - max: 5mb",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/WhatsApp Image 2025-12-08 at 12.30.44 PM.jpeg"
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"description": "nullable , adv clinic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/create-banner",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"create-banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/single-banner/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"single-banner",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title_ar",
+									"value": "سنليسر",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "sddghj",
+									"description": "req",
+									"type": "text"
+								},
+								{
+									"key": "description_ar",
+									"value": "سيابل سينلا سيرل ",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "dasgd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "req - max: 5mb",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"description": "nullable , adv clinic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/update-banner/:id?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"update-banner",
+								":id"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/delete-banner/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-banner",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions (front end)",
+			"item": [
+				{
+					"name": "All Withdraw requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/withdraw-requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"withdraw-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/withdraw-request/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"withdraw-request",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mark as paid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"description": "nullable",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/2025-08-31-68b45b95d6ed0.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/withdraw-request/:id/mark-as-paid?_method=PUT",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"withdraw-request",
+								":id",
+								"mark-as-paid"
+							],
+							"query": [
+								{
+									"key": "_method",
+									"value": "PUT"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|ihg6lbBDaglGlyrnuWAvl1dDgwqFK9NEmlJOd8WZ36e3a67a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/withdraw-request/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"withdraw-request",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		}
+	]
+}
